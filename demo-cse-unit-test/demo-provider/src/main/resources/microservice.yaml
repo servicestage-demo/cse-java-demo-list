@@ -1,0 +1,19 @@
+APPLICATION_ID: demo-cse-unit-test
+service_description:
+  name: provider
+  version: 0.0.1
+cse:
+  service:
+    registry:
+      address: http://127.0.0.1:30100
+      instance:
+        watch: false
+  monitor:
+    client:
+      enabled: false
+  rest:
+    address: 0.0.0.0:8080
+  handler:
+    chain:
+      Provider:
+        default: bizkeeper-provider,perf-stats,qps-flowcontrol-provider

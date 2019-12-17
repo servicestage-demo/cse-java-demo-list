@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.huawei.dao.PersonDao">
+	<select id="queryPerson" resultType="com.huawei.entity.Person">
+		SELECT * FROM demo_person
+		WHERE pid=#{pid}
+	</select>
+
+	<insert id="savePerson" parameterType="com.huawei.entity.Person">
+		INSERT INTO
+		demo_person(pid,name,password,gender,age)
+		VALUES(#{pid},#{name},#{password},#{gender},#{age});
+	</insert>
+
+	<delete id="deletePerson">
+		DELETE FROM demo_person WHERE pid=#{pid}
+	</delete>
+	
+	<update id="isExists">
+		use demo
+	</update>
+	<update id="createDatabase">
+		create database demo
+	</update>
+	<update id="createTable">
+		create table demo_person (
+			pid varchar(255) not null,
+			name varchar(255) default null,
+			password varchar(255) default null,
+			gender varchar(255) default null,
+			age int(11) null,
+			primary key (pid)
+		) engine=InnoDB default charset=utf8;
+	</update>
+</mapper>
