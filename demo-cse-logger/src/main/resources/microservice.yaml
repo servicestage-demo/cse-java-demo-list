@@ -26,12 +26,12 @@ service_description:
 servicecomb:
   service:
     registry:
-      address: https://cse.cn-north-1.myhuaweicloud.com:443
+      address: https://cse.xxx.myhuaweicloud.com:443
   rest:
     address: 0.0.0.0:8081
   credentials:
-    accessKey: YFFILPMUIICIYD4DGUTC
-    secretKey: FPeDaNYHWZsUzihKHj3lbZFb5TIkXfqHX66pDRAQ
+    accessKey: Your AK
+    secretKey: Your SK
     project: cn-north-1
     akskCustomerCipher: default
   handler:
