@@ -1,0 +1,4 @@
+<!-- 要想使用自定义的Handler，首先用户需要再resources/config/目录下放置一份cse.handler.xml配置文件，并在其中声明自己的handler的ID和handler类型 -->
+<config>
+	<handler id="mockhandler" class="com.huawei.handler.MockHandler"/>
+</config>
