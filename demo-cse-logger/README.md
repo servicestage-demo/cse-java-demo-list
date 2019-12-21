@@ -33,5 +33,5 @@
 
 [调用链配置]https://docs.servicecomb.io/java-chassis/zh_CN/general-development/customized-tracing.html
 
-[调用链示例]https://github.com/lovefu/demo-zipkin-tracing
+[调用链示例]https://github.com/servicestage-demo/cse-java-demo-list/tree/master/demo-zipkin-tracing
 
