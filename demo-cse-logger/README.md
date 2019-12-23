@@ -2,15 +2,13 @@
 
 #### Log4j日志
 
-[参考log4j2配置](https://www.cnblogs.com/hafiz/p/6170702.html)
-
 配置在log4j2.xml
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Appenders>
-        <RollingFile name="RollingFile" fileName="${sys:user.home}/logs/dtm.log"
+        <RollingFile name="RollingFile" fileName="${sys:user.home}/logs/cse.log"
                      filePattern="${sys:user.home}/logs/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
             <Policies>
