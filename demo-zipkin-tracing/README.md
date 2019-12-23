@@ -2,9 +2,9 @@
 
 参考链接：
 
-[分布式调用链追踪]https://docs.servicecomb.io/java-chassis/zh_CN/general-development/customized-tracing.html
+[分布式调用链追踪](https://docs.servicecomb.io/java-chassis/zh_CN/general-development/customized-tracing.html)
 
-[基于ServiceComb和Zipkin的分布式调用链追踪]http://servicecomb.apache.org/cn/docs/tracing-with-servicecomb/
+[基于ServiceComb和Zipkin的分布式调用链追踪](http://servicecomb.apache.org/cn/docs/tracing-with-servicecomb/)
 
 #### 概念阐述
 
