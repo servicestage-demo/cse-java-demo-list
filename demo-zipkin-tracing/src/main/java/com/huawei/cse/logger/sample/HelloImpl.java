@@ -15,19 +15,27 @@
  * limitations under the License.
  */
 
-package org.apache.servicecomb.samples.gc;
+package com.huawei.cse.logger.sample;
 
-import org.apache.servicecomb.springboot.starter.provider.EnableServiceComb;
-import org.apache.servicecomb.tracing.zipkin.EnableZipkinTracing;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.apache.servicecomb.provider.rest.common.RestSchema;
+import org.apache.servicecomb.tracing.Span;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@SpringBootApplication
-@EnableServiceComb
-@EnableZipkinTracing
-public class GCApplication {
+@RestSchema(schemaId = "hello")
+@RequestMapping(path = "/")
+public class HelloImpl {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GCApplication.class, args);
-	}
+	@Span
+    @GetMapping(path = "/hello")
+    public String hello() {
+        return "Hello World!";
+    }
+	
+	@Span(spanName = "say_method", callPath = "hello_say_path")
+    @GetMapping(path = "/say")
+    public String say() {
+        return "Say Hello World!";
+    }
+	
 }

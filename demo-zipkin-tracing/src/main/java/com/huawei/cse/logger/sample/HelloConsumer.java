@@ -15,17 +15,17 @@
  * limitations under the License.
  */
 
-package org.apache.servicecomb.samples.gc;
+package com.huawei.cse.logger.sample;
 
-import org.springframework.web.multipart.MultipartFile;
+import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
+import org.springframework.web.client.RestTemplate;
 
-/**
- * {@link GCEndpoint} provides the common interface for different endpoint
- * implementations. It needs to be declared as public.
- */
-public interface GCEndpoint {
-	/**
-	 * garbage-classify
-	 */
-	String gc(MultipartFile file);
+public class HelloConsumer {
+    private final RestTemplate restTemplate = RestTemplateBuilder.create();
+
+    public void invokeHello() {
+        //service url is : cse://serviceName/operation
+        String serviceName = "HelloServiceComb";
+        restTemplate.getForObject("cse://" + serviceName + "/hello", String.class);
+    }
 }
