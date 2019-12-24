@@ -169,7 +169,7 @@ public String say() {
 
 ##### 5、调用接口，产生zipkin日志
 
-首先要运行zipkin（如果是本地，可以下载zipkin-server-2.12.9-exec.jar，双击运行即可）
+首先要运行zipkin（如果是本地，可以下载zipkin-server-2.12.9-exec.jar，双击运行或者执行启动命令java -jar zipkin-server-2.12.9-exec.jar 即可）
 
 ```
 #调用示例
