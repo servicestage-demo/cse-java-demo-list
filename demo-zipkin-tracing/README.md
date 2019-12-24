@@ -150,12 +150,12 @@ public class HelloImpl {
 
 span name 默认为当前注释的方法全名。
 call.path 默认为当前注释的方法签名。
-例如，上述例子SlowRepoImp里上报的数据如下：
+例如，上述例子HelloImpl里上报的数据如下：
 
-| key       | value                               |
-| :-------- | ----------------------------------- |
-| span name | crawl                               |
-| call.path | public abstract java.lang.String... |
+| key       | value                      |
+| :-------- | -------------------------- |
+| span name | hello                      |
+| call.path | public java.lang.String... |
 
 如果需要定制上报的数据内容，可以传入自定义的参数：
 
