@@ -15,32 +15,32 @@
  * limitations under the License.
  */
 
-package org.apache.servicecomb.samples.gc;
+package com.huawei.cse.logger.sample;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.apache.servicecomb.tracing.Span;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
 
-/**
- * {@link GCRestEndpoint} provides the rest implementation of
- * {@link GCEndpoint}. The rest endpoint is accessed by /gc with HTTP POST.
- */
-@RestSchema(schemaId = "GCRestEndpoint")
+@RestSchema(schemaId = "hello")
 @RequestMapping(path = "/")
-public class GCRestEndpoint implements GCEndpoint {
-	private final FileService fileService;
-
-	@Autowired
-	public GCRestEndpoint(FileService fileService) {
-		this.fileService = fileService;
-	}
-
-	@PostMapping(path = "/gc", produces = MediaType.TEXT_PLAIN_VALUE)
-	public String gc(@RequestPart(name = "file") MultipartFile file) {
-		return fileService.uploadFile(file);
-	}
+public class HelloImpl {
+	private static final Logger logger = LogManager.getLogger(HelloImpl.class);
+	
+	@Span
+    @GetMapping(path = "/hello")
+    public String hello() {
+		logger.warn("This is Hello World!");
+        return "Hello World!";
+    }
+	
+	@Span(spanName = "say_method", callPath = "hello_say_path")
+    @GetMapping(path = "/say")
+    public String say() {
+		logger.warn("This is Say Hello World!");
+        return "Say Hello World!";
+    }
+	
 }

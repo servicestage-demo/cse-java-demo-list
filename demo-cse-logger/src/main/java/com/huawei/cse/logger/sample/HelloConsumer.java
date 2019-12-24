@@ -15,19 +15,17 @@
  * limitations under the License.
  */
 
-package org.apache.servicecomb.samples.gc;
+package com.huawei.cse.logger.sample;
 
-import org.apache.servicecomb.springboot.starter.provider.EnableServiceComb;
-import org.apache.servicecomb.tracing.zipkin.EnableZipkinTracing;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
+import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
-@EnableServiceComb
-@EnableZipkinTracing
-public class GCApplication {
+public class HelloConsumer {
+    private final RestTemplate restTemplate = RestTemplateBuilder.create();
 
-	public static void main(String[] args) {
-		SpringApplication.run(GCApplication.class, args);
-	}
+    public void invokeHello() {
+        //service url is : cse://serviceName/operation
+        String serviceName = "HelloServiceComb";
+        restTemplate.getForObject("cse://" + serviceName + "/hello", String.class);
+    }
 }
