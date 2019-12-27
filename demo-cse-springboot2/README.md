@@ -2,14 +2,15 @@
 
 #### 1、示例版本
 
-将以下三个依赖配置在dependencyManagement标签中。
-
+将以下四个依赖配置在dependencyManagement标签中。
+```
 org.springframework.boot:spring-boot-starter-parent:2.1.6.RELEASE
 org.springframework:spring-core:5.1.8.RELEASE
 org.apache.servicecomb:java-chassis-dependencies-springboot2: 1.1.0.B018
 com.huawei.paas.cse:cse-dependency:2.3.46
-
-注意：spring-boot-starter-parent、spring-core依赖需要配置在java-chassis-dependencies-springboot2之前，原因：chassis内部依赖可能是比较旧的版本，先行声明将覆盖旧版本。
+```
+注意：spring-boot-starter-parent、spring-core依赖需要配置在java-chassis-dependencies-springboot2之前，
+原因：chassis内部依赖可能是比较旧的版本，先行声明将覆盖旧版本。
 
 
 
