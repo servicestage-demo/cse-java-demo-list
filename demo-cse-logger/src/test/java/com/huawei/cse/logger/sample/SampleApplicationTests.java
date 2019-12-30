@@ -18,21 +18,21 @@ public class SampleApplicationTests {
 	@Test
 	public void infoLogfile() {
 		// String userdir = System.getProperties().getProperty("user.home");
-		File f = new File("C:\\Users\\fwx640776\\logs\\servicecomb_info.log");
+		File f = new File("C:\\Users\\xxx\\logs\\servicecomb_info.log");
 		Assert.assertEquals(true, f.exists());
 	}
 
 	@Test
 	public void warnLogfile() {
 		// String userdir = System.getProperties().getProperty("user.home");
-		File f = new File("C:\\Users\\fwx640776\\logs\\servicecomb_warn.log");
+		File f = new File("C:\\Users\\xxx\\logs\\servicecomb_warn.log");
 		Assert.assertEquals(true, f.exists());
 	}
 
 	@Test
 	public void errorLogfile() {
 		// String userdir = System.getProperties().getProperty("user.home");
-		File f = new File("C:\\Users\\fwx640776\\logs\\servicecomb_error.log");
+		File f = new File("C:\\Users\\xxx\\logs\\servicecomb_error.log");
 		Assert.assertEquals(true, f.exists());
 	}
 
